@@ -77,7 +77,7 @@ class TodoController extends Controller
         //fillメソッドの戻り値をｄｄ
         //fillで何が変わっているか
         //save()でINSERT文を実行している。
-        return redirect()->to('todo');
+        return redirect()->route('todo.index');
     }
     
     /**
@@ -129,7 +129,7 @@ class TodoController extends Controller
         $todo->fill($input);
         $todo->save();
         //強制的に一覧に帰れと命令されてるよ
-        return redirect()->to('todo');
+        return redirect()->route('todo.index');
     }
     
     /**
@@ -143,6 +143,6 @@ class TodoController extends Controller
         $this->todo->find($id)->delete();
         // var_dump($this->todo->find($id));
         // exit;
-        return redirect()->to('todo');
+        return redirect()->route('todo.index');
     }
 }
