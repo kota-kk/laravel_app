@@ -20,3 +20,4 @@ Auth::routes();
 // routes()メソッドはvendor> Laravel> framework> src> illminate> support> facedes> Auth.php で定義されている
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/gizmo_lv1', 'lvTestController@index')->name('gizmo');
