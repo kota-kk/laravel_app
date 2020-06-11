@@ -21,3 +21,6 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/gizmo_lv1', 'lvTestController@index')->name('gizmo');
+Route::get('/gizmo_lv2', 'lvTestController@lv2')->name('gizmosecond');
+Route::post('/gizumo_lv2', 'lvTestController@resultlv2')->name('resultlv2');
+

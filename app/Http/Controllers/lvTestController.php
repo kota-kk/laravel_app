@@ -6,6 +6,12 @@ use Illuminate\Http\Request;
 
 class lvTestController extends Controller
 {
+
+    public function __construct()
+    {
+        // dd("$_POST");
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -21,9 +27,26 @@ class lvTestController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function lv2()
     {
-        //
+        return view('leveltest.lv2');
+    }
+
+    public function resultlv2(Request $request)
+    {
+        // dd($request->all());
+        $results = $request->all();
+        // dd($results);
+
+        foreach($results as $resultkey => $resultvalue)
+        {
+            // dd($result);
+            if($resultkey !== '_token') 
+            {
+                // dump($resultkey,$results['_token']);
+                echo $resultvalue;
+            }
+        }
     }
 
     /**
