@@ -2,7 +2,7 @@
 //namespaceはソースコードの先頭で宣言、先にHTMLなどは使用しないこと
 //例えば今回ならuse app/**とすることでappというネームを持った**を指定できる
 namespace App;
-
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Model;
 
 //ModelとはMVC構造のMにあたり、テーブル名の単数形で命名する決まりがある。
@@ -11,7 +11,10 @@ use Illuminate\Database\Eloquent\Model;
 //ホワイトリストとも呼ばれ、ブラックリストとして逆の動きをする$guardedがある。
 class Todo extends Model
 {
-    // protected $table = 'todos';
+    use SoftDeletes;
+
+    protected $table = 'todos';
+    protected $dates = ['deleted_at'];
     protected $fillable = ['title', 'user_id'];
 
     public function getByUserId($id)
