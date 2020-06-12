@@ -29,7 +29,7 @@ class TodoController extends Controller
     {
         $todos = $this->todo->getByUserId(Auth::id());
         // dd($this->todo);//App/Todo
-        // dd($todos);//App/Todo
+        // dd($todos);
         // CollectionインスタンスにItemが配列で格納されて返ってきてる
         //all()がget()でも同じ値？
         // $todos = $this->todo->all();

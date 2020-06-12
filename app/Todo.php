@@ -9,11 +9,14 @@ use Illuminate\Database\Eloquent\Model;
 //9行目はTodoモデルをtodosテーブルに保存させている
 //12行目で$fillableに指定したカラムのみに値を代入させることができる
 //ホワイトリストとも呼ばれ、ブラックリストとして逆の動きをする$guardedがある。
+
+
+
 class Todo extends Model
 {
     use SoftDeletes;
 
-    protected $table = 'todos';
+    // protected $table = 'todos';
     protected $dates = ['deleted_at'];
     protected $fillable = ['title', 'user_id'];
 
